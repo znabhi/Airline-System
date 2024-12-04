@@ -1,11 +1,14 @@
 const express = require("express");
 const { PORT } = require("./config/serverConfig");
 
-const app = express();
-
 const setupAndStartServer = async () => {
-  app.listen(PORT, (req, res) => {
+  const app = express();
+
+  app.listen(PORT, () => {
     console.log(`server is started ${PORT}`);
+  });
+  app.get("/", (req, res) => {
+    res.send("Everything is ok");
   });
 };
 
