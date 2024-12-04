@@ -11,8 +11,8 @@
 ```
 {
   "development": {
-    "username": "<YOUR_USERNAME>",
-    "password": "<YOUR_PASSWORD>",
+    "username": "<YOUR_DB_USERNAME>",
+    "password": "<YOUR_DB_PASSWORD>",
     "database": "airline_system",
     "host": "127.0.0.1",
     "dialect": "mysql"
