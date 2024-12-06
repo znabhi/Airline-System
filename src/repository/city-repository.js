@@ -1,4 +1,4 @@
-const { where } = require("sequelize");
+// const { where } = require("sequelize");
 const { City } = require("../models/index");
 
 class CityRepository {
@@ -40,9 +40,10 @@ class CityRepository {
           id: cityId,
         },
       });
+      return true;
     } catch (error) {
       throw error;
     }
   }
 }
-module.exports = { CityRepository };
+module.exports = CityRepository;
