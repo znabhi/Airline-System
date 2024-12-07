@@ -1,4 +1,3 @@
-const { where } = require("sequelize");
 const { CityRepository } = require("../repository/index");
 class CityService {
   constructor() {
@@ -7,6 +6,15 @@ class CityService {
   async createCity(data) {
     try {
       const city = await this.cityRepository.createCity(data);
+      return city;
+    } catch (error) {
+      throw { error };
+    }
+  }
+
+  async getAllCity() {
+    try {
+      const city = await this.cityRepository.getAllCity();
       return city;
     } catch (error) {
       throw { error };
