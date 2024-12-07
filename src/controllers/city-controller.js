@@ -43,6 +43,8 @@ const get = async (req, res) => {
 };
 
 const destroy = async (req, res) => {
+  console.log(req.params.id);
+
   try {
     const response = await cityService.deleteCity(req.params.id);
     return res.status(200).json({
@@ -54,8 +56,8 @@ const destroy = async (req, res) => {
   } catch (error) {
     console.log(error);
     return res.status(500).json({
-      data: response,
-      success: true,
+      data: {},
+      success: false,
       message: "not able to delete city",
       err: error,
     });
