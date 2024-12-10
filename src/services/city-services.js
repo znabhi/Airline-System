@@ -12,9 +12,9 @@ class CityService {
     }
   }
 
-  async getAllCity() {
+  async getAllCity(filter) {
     try {
-      const city = await this.cityRepository.getAllCity();
+      const city = await this.cityRepository.getAllCity(filter);
       return city;
     } catch (error) {
       throw { error };

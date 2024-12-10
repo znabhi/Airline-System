@@ -24,3 +24,4 @@
 <!-- if some error shown related to mysql root@localhost password then see this blog -
  https://phoenixnap.com/kb/access-denied-for-user-root-localhost -->
 - and then execute
+  `npx sequelize db:migrate`
