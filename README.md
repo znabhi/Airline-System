@@ -21,6 +21,6 @@
 ```
 
 - Once you've added your db config as listed above, go to the src folder from your terminal and execute `npx sequelize db:create`
-  and then execute
-
-`npx sequelize db:migrate`
+<!-- if some error shown related to mysql root@localhost password then see this blog -
+ https://phoenixnap.com/kb/access-denied-for-user-root-localhost -->
+- and then execute
