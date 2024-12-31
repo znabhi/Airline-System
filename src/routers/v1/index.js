@@ -21,5 +21,6 @@ router.delete("/airpot/delect/:id", AirpotController.deleteAirpot);
 //Flight Router
 
 router.post("/flights", FlightController.create);
+router.get("/flights", FlightController.getAll);
 
 module.exports = router;
