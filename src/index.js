@@ -18,16 +18,14 @@ const setupAndStartServer = async () => {
 
   app.listen(PORT, async () => {
     console.log(`server is started ${PORT}`);
-
     // db.sequelize.sync({ alter: true });
-
-    const city = await City.findOne({
-      where: {
-        id: 10,
-      },
-    });
-    const airpot = await city.getAirpots();
-    console.log(airpot);
+    // const city = await City.findOne({
+    //   where: {
+    //     id: 10,
+    //   },
+    // });
+    // const airpot = await city.getAirpots();
+    // console.log(airpot);
   });
 };
 
