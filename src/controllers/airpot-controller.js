@@ -1,11 +1,11 @@
 const { AirpotService } = require("../services/index");
-
+const { SuccessErrorCodes } = require("../utils/error-codes");
 const airpotService = new AirpotService();
 
 const create = async (req, res) => {
   try {
     const airpot = await airpotService.create(req.body);
-    return res.status(201).json({
+    return res.status(SuccessErrorCodes.CREATED).json({
       data: airpot,
       success: true,
       message: "Successfully Created...",

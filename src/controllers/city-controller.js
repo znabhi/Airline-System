@@ -1,11 +1,15 @@
 const { CityService } = require("../services/index");
-
+const {
+  SuccessErrorCodes,
+  ClientErrorCodes,
+  ServerErrorCodes,
+} = require("../utils/error-codes");
 const cityService = new CityService();
 
 const create = async (req, res) => {
   try {
     const city = await cityService.create(req.body);
-    return res.status(201).json({
+    return res.status(SuccessErrorCodes.CREATED).json({
       data: city,
       success: true,
       message: "Successfully Created City",
@@ -25,7 +29,7 @@ const create = async (req, res) => {
 const getAllCity = async (req, res) => {
   try {
     const city = await cityService.getAllCity(req.query);
-    return res.status(200).json({
+    return res.status(SuccessErrorCodes.OK).json({
       data: city,
       success: true,
       message: "successfully fatched all cities",
@@ -51,7 +55,7 @@ const getById = async (req, res) => {
         message: "this City Id not exists",
       });
     }
-    return res.status(201).json({
+    return res.status(SuccessErrorCodes.OK).json({
       data: city,
       success: true,
       message: "Successfully get the city",
@@ -91,8 +95,7 @@ const destroy = async (req, res) => {
 const update = async (req, res) => {
   try {
     const update = await cityService.update(req.params.id, req.body);
-
-    return res.status(201).json({
+    return res.status(SuccessErrorCodes.OK).json({
       data: update,
       success: true,
       message: "successfully updated details",
